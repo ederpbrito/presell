@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Você Pode Estar com Deficiência de Magnésio e Não Saber</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0d2e1a;
+    --green-mid: #1a5c34;
+    --green-light: #2d8a52;
+    --green-pale: #e8f5ee;
+    --cream: #faf8f3;
+    --cream-dark: #f0ece0;
+    --gold: #c8a84b;
+    --gold-light: #f0d98a;
+    --text-dark: #1a1a18;
+    --text-mid: #4a4a42;
+    --text-light: #8a8a7a;
+    --red-alert: #c0392b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* HEADER BAR */
+  .top-bar {
+    background: var(--green-deep);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .top-bar strong { color: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: var(--green-deep);
+    padding: 70px 20px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(45,138,82,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-block;
+    background: rgba(200,168,75,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5vw, 54px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    max-width: 780px;
+    margin: 0 auto 24px;
+  }
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+  .hero-sub {
+    font-size: clamp(15px, 2vw, 18px);
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 16px 40px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .hero-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* SYMPTOM STRIP */
+  .symptom-strip {
+    background: var(--cream-dark);
+    border-top: 3px solid var(--gold);
+    border-bottom: 1px solid #ddd;
+    padding: 32px 20px;
+  }
+  .symptom-strip-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .symptom-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    margin-bottom: 24px;
+    color: var(--text-dark);
+  }
+  .symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+  }
+  .symptom-pill {
+    background: #fff;
+    border: 1px solid #e0ddd0;
+    border-radius: 4px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+  .symptom-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  /* SECTION WRAPPER */
+  .section { padding: 72px 20px; }
+  .section-inner { max-width: 760px; margin: 0 auto; }
+  .section-inner.wide { max-width: 900px; }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-mid);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+  }
+  h2.section-title em { color: var(--green-light); font-style: normal; }
+
+  .lead-text {
+    font-size: 17px;
+    color: var(--text-mid);
+    margin-bottom: 28px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* WHY SECTION */
+  .why-bg { background: var(--green-deep); color: #fff; }
+  .why-bg .section-tag { background: rgba(45,138,82,0.3); color: var(--gold-light); }
+  .why-bg h2.section-title { color: #fff; }
+  .why-bg h2.section-title em { color: var(--gold-light); }
+  .why-bg .lead-text { color: rgba(255,255,255,0.75); }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 32px;
+    font-size: 14px;
+  }
+  .compare-table th {
+    padding: 12px 16px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .compare-table th:first-child { text-align: left; }
+  .compare-table th.col-bad { color: rgba(255,255,255,0.5); }
+  .compare-table th.col-good { color: var(--gold-light); }
+  .compare-table td {
+    padding: 13px 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    vertical-align: middle;
+  }
+  .compare-table td:first-child { color: rgba(255,255,255,0.8); font-size: 13px; }
+  .compare-table td:not(:first-child) { text-align: center; font-size: 18px; }
+  .compare-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+  /* 5 FORMS */
+  .forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .form-card {
+    background: #fff;
+    border: 1px solid #e4e0d4;
+    border-radius: 6px;
+    padding: 24px 22px;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .form-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+  .form-card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--cream-dark);
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    line-height: 1;
+  }
+  .form-card h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--green-mid);
+    margin-bottom: 8px;
+  }
+  .form-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ANVISA BADGE */
+  .trust-strip {
+    background: var(--cream-dark);
+    border-top: 1px solid #e0ddd0;
+    border-bottom: 1px solid #e0ddd0;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-mid);
+  }
+  .trust-badge-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--green-pale);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .trust-badge span { text-align: left; line-height: 1.3; }
+  .trust-badge strong { display: block; color: var(--text-dark); font-weight: 500; }
+
+  /* ROUTINE */
+  .routine-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  @media (max-width: 560px) { .routine-steps { grid-template-columns: 1fr; } }
+  .routine-card {
+    background: var(--green-pale);
+    border-radius: 6px;
+    padding: 22px;
+    border-left: 4px solid var(--green-light);
+  }
+  .routine-card h3 { font-size: 15px; font-weight: 500; color: var(--green-deep); margin-bottom: 6px; }
+  .routine-card p { font-size: 13px; color: var(--text-mid); }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: linear-gradient(135deg, var(--green-deep) 0%, #0a2215 100%);
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+  .cta-section h2 em { color: var(--gold-light); font-style: normal; }
+  .cta-section p { color: rgba(255,255,255,0.65); font-size: 16px; margin-bottom: 36px; font-weight: 300; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--green-deep);
+    font-weight: 500;
+    font-size: 17px;
+    padding: 18px 52px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 24px rgba(200,168,75,0.35);
+  }
+  .cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .cta-disclaimer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* FAQ */
+  .faq-list { margin-top: 32px; }
+  .faq-item {
+    border-bottom: 1px solid #e0ddd0;
+    padding: 20px 0;
+  }
+  .faq-q {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::after { content: '+'; font-size: 20px; color: var(--green-light); flex-shrink: 0; margin-left: 12px; }
+  .faq-q.open::after { content: '−'; }
+  .faq-a {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    display: none;
+    padding-top: 4px;
+  }
+  .faq-a.open { display: block; }
+
+  /* FOOTER */
+  footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.6s ease both; }
+  .hero .hero-label { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero .hero-sub { animation-delay: 0.3s; }
+  .hero .hero-cta { animation-delay: 0.4s; }
+  .hero .hero-note { animation-delay: 0.5s; }
+
+  @media (max-width: 600px) {
+    .compare-table td, .compare-table th { padding: 10px 10px; font-size: 13px; }
+    .routine-steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <strong>Fórmula com 5 tipos de magnésio</strong> · Registro ANVISA · Entrega para todo o Brasil
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Você sabia disso?</div>
+  <h1>Caimbra, insônia e cansaço constante podem ser <em>sintomas de um mineral que falta</em> no seu corpo</h1>
+  <p class="hero-sub">O magnésio participa de mais de 350 reações no organismo — e a maioria das pessoas não repõe da forma certa.</p>
+  <a href="https://www.nacaoverde.com.br/products/suplemento-de-magnesio-5m-formula-5m-60-capsulas-350mg-o-primeiro-e-original-5m?bg_ref=L5LUKoafwK&utm_source=Na%C3%A7%C3%A3o%20Verde%20-%20Cerquilho&utm_medium=affiliate&utm_campaign=Na%C3%A7%C3%A3o%20Verde%20-%20Franqueados" class="hero-cta" onclick="gtag_report_conversion()">Quero experimentar o Magnésio 5M →</a>
+</section>
+
+<!-- SYMPTOMS -->
+<section class="symptom-strip">
+  <div class="symptom-strip-inner">
+    <h2>Você se identifica com algum desses sinais?</h2>
+    <div class="symptoms-grid">
+      <div class="symptom-pill"><span class="symptom-icon">⚡</span> Caimbras que aparecem do nada</div>
+      <div class="symptom-pill"><span class="symptom-icon">🌙</span> Noites de sono interrompido</div>
+      <div class="symptom-pill"><span class="symptom-icon">😮‍💨</span> Cansaço que não passa mesmo descansando</div>
+      <div class="symptom-pill"><span class="symptom-icon">😤</span> Irritabilidade sem motivo aparente</div>
+      <div class="symptom-pill"><span class="symptom-icon">💢</span> Tensão muscular constante</div>
+      <div class="symptom-pill"><span class="symptom-icon">🧠</span> Dificuldade de concentração</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-tag">O problema</span>
+    <h2 class="section-title">O magnésio é essencial — mas <em>nem todo suplemento funciona igual</em></h2>
+    <p class="lead-text">
+      O magnésio participa de mais de 350 reações enzimáticas no corpo humano. Quando o nível cai, você sente na pele: músculo travando na madrugada, dificuldade para dormir, irritabilidade e aquela sensação de cansaço que não passa com nenhuma quantidade de descanso.
+    </p>
+    <p class="lead-text">
+      O problema é que a maioria dos suplementos no mercado usa apenas uma forma de magnésio — geralmente o óxido, que tem baixa absorção e age só em um sistema do organismo. É como tentar resolver cinco problemas com uma única ferramenta.
+    </p>
+    <p style="font-size:16px; font-weight:500; color: var(--green-mid); padding: 20px; background: var(--green-pale); border-radius: 4px; border-left: 4px solid var(--green-light);">
+      Cada forma de magnésio tem afinidade por um tecido diferente: muscular, nervoso, cardiovascular, digestivo, energético. Para uma suplementação completa, você precisa das formas certas.
+    </p>
+  </div>
+</section>
+
+<!-- WHY 5M -->
+<section class="section why-bg">
+  <div class="section-inner wide">
+    <span class="section-tag">A solução</span>
+    <h2 class="section-title">Por que o 5M é diferente de <em>qualquer outro magnésio</em> que você já tomou</h2>
+    <p class="lead-text">
+      A maioria dos produtos entrega apenas 1 forma. O 5M da Nação Verde reúne as 5 principais formas em uma única cápsula diária, cada uma com função específica no organismo.
+    </p>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-bad">Magnésio comum</th>
+          <th class="col-good">5M Magnésio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Formas de magnésio</td><td>❌ 1 forma</td><td>✅ 5 formas</td></tr>
+        <tr><td>Suporte muscular e caimbras</td><td>❌ Parcial</td><td>✅ Completo</td></tr>
+        <tr><td>Apoio ao sono</td><td>❌ Limitado</td><td>✅ Sim</td></tr>
+        <tr><td>Suporte cardiovascular</td><td>❌ Não</td><td>✅ Magnésio Taurato</td></tr>
+        <tr><td>Energia celular</td><td>❌ Não</td><td>✅ Magnésio Dimalato</td></tr>
+        <tr><td>Saúde digestiva</td><td>⚠️ Parcial</td><td>✅ Magnésio Óxido + Cloreto</td></tr>
+        <tr><td>Registro ANVISA</td><td>❌ Varies</td><td>✅ Notificado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 5 FORMS -->
+<section class="section">
+  <div class="section-inner wide">
+    <span class="section-tag">A fórmula</span>
+    <h2 class="section-title">As 5 formas que <em>trabalham juntas</em> pelo seu corpo</h2>
+    <p class="lead-text">Cada forma foi escolhida pela sua afinidade com um sistema específico do organismo. Uma dose. Cinco frentes.</p>
+    <div class="forms-grid">
+      <div class="form-card">
+        <div class="form-card-num">01</div>
+        <h3>Magnésio Bisglicinato</h3>
+        <p>Alta biodisponibilidade. Essencial para o equilíbrio do corpo e para a vitalidade. Reduz o estresse muscular e apoia a recuperação.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card-num">02</div>
+        <h3>Magnésio Taurato</h3>
+        <p>Combina magnésio com taurina. Apoia a saúde cardiovascular e a função cerebral, além de ajudar a estabilizar a pressão arterial.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card-num">03</div>
+        <h3>Magnésio Dimalato</h3>
+        <p>Combina magnésio com ácido málico. Voltado para produção de energia celular — especialmente útil contra fadiga e falta de disposição.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card-num">04</div>
+        <h3>Magnésio Óxido</h3>
+        <p>Contribui para diversas funções vitais e apoia o sistema digestivo, auxiliando no funcionamento intestinal regular.</p>
+      </div>
+      <div class="form-card">
+        <div class="form-card-num">05</div>
+        <h3>Magnésio Cloreto (P.A)</h3>
+        <p>Fundamental para a produção de suco gástrico e ativação de enzimas digestivas. Essencial para absorção eficiente de nutrientes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-strip">
+  <div class="trust-badges">
+    <div class="trust-badge">
+      <div class="trust-badge-icon">🛡️</div>
+      <span><strong>Registrado na ANVISA</strong>Notificado sob nº 2535104988</span>
+    </div>
+    <div class="trust-badge">
+      <div class="trust-badge-icon">🌿</div>
+      <span><strong>Fórmula limpa</strong>Sem componentes nocivos</span>
+    </div>
+    <div class="trust-badge">
+      <div class="trust-badge-icon">🏪</div>
+      <span><strong>Nação Verde</strong>Loja oficial de produtos naturais</span>
+    </div>
+    <div class="trust-badge">
+      <div class="trust-badge-icon">💊</div>
+      <span><strong>Apenas 2 cápsulas</strong>Dose diária simples e prática</span>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTINE -->
+<section class="section">
+  <div class="section-inner">
+    <span class="section-tag">Como usar</span>
+    <h2 class="section-title">Simples de incluir na <em>rotina de qualquer pessoa</em></h2>
+    <p class="lead-text">Apenas 2 cápsulas por dia, com água. O horário pode variar dependendo do seu objetivo principal.</p>
+    <div class="routine-steps">
+      <div class="routine-card">
+        <h3>🌙 Se o objetivo é dormir melhor</h3>
+        <p>Tome as 2 cápsulas à noite, antes de dormir. O magnésio favorece o relaxamento natural e pode ajudar a melhorar a qualidade do sono.</p>
+      </div>
+      <div class="routine-card">
+        <h3>☀️ Se o objetivo é mais energia e foco</h3>
+        <p>Tome pela manhã, junto ao café da manhã. O Magnésio Dimalato auxilia na produção de energia celular ao longo do dia.</p>
+      </div>
+    </div>
+    <p style="font-size:13px; color: var(--text-light); margin-top: 20px;">
+      Dica: combine com boa hidratação (pelo menos 2L de água/dia) para potencializar a absorção. Alimentos como castanhas, folhas verdes e sementes também são boas fontes naturais.
+    </p>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section" style="background: var(--cream-dark); border-top: 1px solid #e0ddd0;">
+  <div class="section-inner">
+    <span class="section-tag">Avaliações verificadas</span>
+    <h2 class="section-title">Veja o que <em>alguns clientes dizem</em></h2>
+    <div style="display: grid; gap: 16px; margin-top: 32px;">
+
+      <div style="background: #fff; border: 1px solid #e4e0d4; border-radius: 6px; padding: 22px 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 500; color: var(--green-mid); font-size: 15px; flex-shrink: 0;">J</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: var(--text-dark);">Jairo Naves</span>
+              <span style="font-size: 11px; background: var(--green-pale); color: var(--green-mid); padding: 2px 8px; border-radius: 20px; font-weight: 500;">Compra verificada</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light); margin-top: 2px;">
+              <span style="color: var(--gold); font-size: 13px;">★★★★★</span> &nbsp;05/06/2026
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--text-mid); line-height: 1.7; font-style: italic;">"Muito bom. Segunda vez que compro e agora já comecei a ter sócios pra tomar comigo."</p>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e4e0d4; border-radius: 6px; padding: 22px 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 500; color: var(--green-mid); font-size: 15px; flex-shrink: 0;">A</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: var(--text-dark);">Anônimo</span>
+              <span style="font-size: 11px; background: var(--green-pale); color: var(--green-mid); padding: 2px 8px; border-radius: 20px; font-weight: 500;">Compra verificada</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light); margin-top: 2px;">
+              <span style="color: var(--gold); font-size: 13px;">★★★★★</span> &nbsp;05/06/2026
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--text-mid); line-height: 1.7; font-style: italic;">"Produto chegou dentro do prazo, estou fazendo uso e gostando muito."</p>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e4e0d4; border-radius: 6px; padding: 22px 24px; border-left: 4px solid var(--green-light);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 500; color: var(--green-mid); font-size: 15px; flex-shrink: 0;">R</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: var(--text-dark);">Rosimeire Teixeira</span>
+              <span style="font-size: 11px; background: var(--green-pale); color: var(--green-mid); padding: 2px 8px; border-radius: 20px; font-weight: 500;">Compra verificada</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light); margin-top: 2px;">
+              <span style="color: var(--gold); font-size: 13px;">★★★★★</span> &nbsp;04/23/2026
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--text-mid); line-height: 1.7; font-style: italic;">"Já utilizo há algum tempo. Melhorou muito as dores articulares e o sono."</p>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e4e0d4; border-radius: 6px; padding: 22px 24px; border-left: 4px solid var(--green-light);">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 500; color: var(--green-mid); font-size: 15px; flex-shrink: 0;">L</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: var(--text-dark);">Luciana Palhares</span>
+              <span style="font-size: 11px; background: var(--green-pale); color: var(--green-mid); padding: 2px 8px; border-radius: 20px; font-weight: 500;">Compra verificada</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light); margin-top: 2px;">
+              <span style="color: var(--gold); font-size: 13px;">★★★★★</span> &nbsp;04/30/2026
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--text-mid); line-height: 1.7; font-style: italic;">"Comprei pra mim e meu esposo tomar. Já estamos sentindo a diferença — ele sentia muito cansaço e dor nas pernas e disse que já está se sentindo bem melhor. Vou comprar mais."</p>
+      </div>
+
+      <div style="background: #fff; border: 1px solid #e4e0d4; border-radius: 6px; padding: 22px 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-weight: 500; color: var(--green-mid); font-size: 15px; flex-shrink: 0;">N</div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: var(--text-dark);">Natalia Leal</span>
+            </div>
+            <div style="font-size: 12px; color: var(--text-light); margin-top: 2px;">
+              <span style="color: var(--gold); font-size: 13px;">★★★★★</span> &nbsp;04/30/2026
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 15px; color: var(--text-mid); line-height: 1.7; font-style: italic;">"Vou começar a usar — foi recomendado por uma amiga que disse que ajudou muito nas dores dela. Resolvi comprar."</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="border-top: 1px solid #e0ddd0;">
+  <div class="section-inner">
+    <span class="section-tag">Dúvidas frequentes</span>
+    <h2 class="section-title">Perguntas mais comuns</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Posso tomar se não tiver deficiência confirmada?</div>
+        <div class="faq-a">Sim. A maioria das pessoas não tem exames que confirmem deficiência, mas sintomas como caimbras frequentes, insônia e cansaço são indicativos comuns. Consulte um profissional de saúde antes de iniciar qualquer suplementação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Em quanto tempo começo a sentir os efeitos?</div>
+        <div class="faq-a">Varia de pessoa para pessoa. Algumas relatam melhora na qualidade do sono nas primeiras semanas. Para outros benefícios como redução de caimbras e mais disposição, o período mais comum é de 3 a 6 semanas de uso contínuo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Tem alguma contraindicação?</div>
+        <div class="faq-a">Este produto é um suplemento alimentar. Gestantes, mulheres em amamentação ou pessoas em uso de medicamentos devem consultar um profissional de saúde antes de usar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Por que 5 formas e não apenas uma?</div>
+        <div class="faq-a">Cada forma de magnésio tem afinidade por um tecido diferente no organismo. O bisglicinato é melhor absorvido pelo sistema nervoso; o taurato pelo cardiovascular; o dimalato pela produção de energia; o cloreto pela digestão. Usar todas juntas garante que o mineral chegue a onde é necessário.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Onde o produto é fabricado?</div>
+        <div class="faq-a">O Magnésio 5M é produzido pela Nação Verde, empresa brasileira de produtos naturais, e é notificado na ANVISA, garantindo conformidade com os padrões regulatórios nacionais.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <h2>Pronto para parar de acordar com caimbra <em>e dormir de verdade?</em></h2>
+  <p>Conheça o Magnésio 5M na loja oficial da Nação Verde. Fórmula completa, registro ANVISA, entrega em todo o Brasil.</p>
+  <a href="https://www.nacaoverde.com.br/products/suplemento-de-magnesio-5m-formula-5m-60-capsulas-350mg-o-primeiro-e-original-5m?bg_ref=L5LUKoafwK&utm_source=Na%C3%A7%C3%A3o%20Verde%20-%20Cerquilho&utm_medium=affiliate&utm_campaign=Na%C3%A7%C3%A3o%20Verde%20-%20Franqueados" class="cta-btn" onclick="gtag_report_conversion()">
+    Quero experimentar o Magnésio 5M →
+  </a>
+
+</section>
+
+<footer>
+  <p>Esta página tem caráter informativo e educativo sobre suplementação de magnésio.</p>
+  <p>Este produto não é um medicamento e não se destina a diagnosticar, tratar, curar ou prevenir doenças.</p>
+  <p>Consulte sempre um profissional de saúde antes de iniciar qualquer suplementação.</p>
+  <p style="margin-top:12px;">Nação Verde · Produtos Naturais</p>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const a = q.nextElementSibling;
+      const isOpen = q.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(el => { el.classList.remove('open'); el.nextElementSibling.classList.remove('open'); });
+      if (!isOpen) { q.classList.add('open'); a.classList.add('open'); }
+    });
+  });
+
+  // Google Ads conversion tracking placeholder
+  function gtag_report_conversion() {
+    // Substitua pela sua tag de conversão do Google Ads
+    // gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXX/XXXXXXXXXXXXXXX'});
+    return false;
+  }
+</script>
+
+</body>
+</html>
