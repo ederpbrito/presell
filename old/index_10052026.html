@@ -400,71 +400,6 @@
   }
   footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 
-  /* FLOATING CTA */
-  .float-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--green-deep);
-    padding: 12px 20px;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-  }
-  .float-cta.visible { transform: translateY(0); }
-  .float-cta-text { font-size: 13px; color: rgba(255,255,255,0.7); display: none; }
-  .float-cta-btn {
-    background: var(--gold);
-    color: var(--green-deep);
-    font-weight: 500;
-    font-size: 15px;
-    padding: 12px 28px;
-    border-radius: 3px;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.2s;
-  }
-  .float-cta-btn:hover { background: var(--gold-light); }
-  @media (min-width: 600px) { .float-cta-text { display: block; } }
-
-  /* URGENCY */
-  .urgency-bar {
-    background: #7B2D00;
-    color: #fff;
-    text-align: center;
-    padding: 8px 20px;
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .urgency-bar span { color: var(--gold-light); }
-
-  /* SOCIAL PROOF BAR */
-  .social-proof-bar {
-    background: var(--cream-dark);
-    border-bottom: 1px solid #e0ddd0;
-    padding: 14px 20px;
-    text-align: center;
-  }
-  .social-proof-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 13px;
-    color: var(--text-mid);
-  }
-  .social-proof-item { display: flex; align-items: center; gap: 6px; }
-  .social-proof-item strong { color: var(--text-dark); font-weight: 500; }
-
   /* ANIMATIONS */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -487,14 +422,6 @@
 
 <div class="top-bar">
   <strong>Fórmula com 5 tipos de magnésio</strong> · Registro ANVISA · Entrega para todo o Brasil
-</div>
-
-<div class="social-proof-bar">
-  <div class="social-proof-inner">
-    <div class="social-proof-item">⭐⭐⭐⭐⭐ <strong>4,9/5</strong> de avaliação</div>
-    <div class="social-proof-item">✅ <strong>+500</strong> clientes satisfeitos</div>
-    <div class="social-proof-item">🚚 Entrega <strong>em todo o Brasil</strong></div>
-  </div>
 </div>
 
 <!-- HERO -->
@@ -737,14 +664,6 @@
   </div>
 </section>
 
-<!-- CTA MEIO DE PÁGINA -->
-<section style="background: var(--green-deep); padding: 40px 20px; text-align: center;">
-  <p style="color: rgba(255,255,255,0.75); font-size: 15px; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">Já convencido? Não precisa esperar — o Magnésio 5M está disponível agora na loja oficial.</p>
-  <a href="https://www.nacaoverde.com.br/products/suplemento-de-magnesio-5m-formula-5m-60-capsulas-350mg-o-primeiro-e-original-5m?bg_ref=L5LUKoafwK&utm_source=Na%C3%A7%C3%A3o%20Verde%20-%20Cerquilho&utm_medium=affiliate&utm_campaign=Na%C3%A7%C3%A3o%20Verde%20-%20Franqueados" class="hero-cta" onclick="gtag_report_conversion()" style="font-size: 15px; padding: 14px 36px;">
-    Quero experimentar o Magnésio 5M →
-  </a>
-</section>
-
 <!-- FAQ -->
 <section class="section" style="border-top: 1px solid #e0ddd0;">
   <div class="section-inner">
@@ -779,14 +698,10 @@
 <section class="cta-section">
   <h2>Pronto para parar de acordar com caimbra <em>e dormir de verdade?</em></h2>
   <p>Conheça o Magnésio 5M na loja oficial da Nação Verde. Fórmula completa, registro ANVISA, entrega em todo o Brasil.</p>
-  <div style="background: rgba(200,168,75,0.15); border: 1px solid var(--gold); border-radius: 4px; padding: 10px 20px; display: inline-block; margin-bottom: 24px; font-size: 13px; color: var(--gold-light);">
-    🔥 Produto com alta demanda — estoque pode ser limitado
-  </div>
-  <br>
   <a href="https://www.nacaoverde.com.br/products/suplemento-de-magnesio-5m-formula-5m-60-capsulas-350mg-o-primeiro-e-original-5m?bg_ref=L5LUKoafwK&utm_source=Na%C3%A7%C3%A3o%20Verde%20-%20Cerquilho&utm_medium=affiliate&utm_campaign=Na%C3%A7%C3%A3o%20Verde%20-%20Franqueados" class="cta-btn" onclick="gtag_report_conversion()">
     Quero experimentar o Magnésio 5M →
   </a>
-  <p style="margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.4);">⭐⭐⭐⭐⭐ Mais de 500 clientes satisfeitos · Compra 100% segura</p>
+
 </section>
 
 <footer>
@@ -795,14 +710,6 @@
   <p>Consulte sempre um profissional de saúde antes de iniciar qualquer suplementação.</p>
   <p style="margin-top:12px;">Nação Verde · Produtos Naturais</p>
 </footer>
-
-<!-- FLOATING CTA -->
-<div class="float-cta" id="floatCta">
-  <span class="float-cta-text">⭐⭐⭐⭐⭐ Mais de 500 clientes satisfeitos</span>
-  <a href="https://www.nacaoverde.com.br/products/suplemento-de-magnesio-5m-formula-5m-60-capsulas-350mg-o-primeiro-e-original-5m?bg_ref=L5LUKoafwK&utm_source=Na%C3%A7%C3%A3o%20Verde%20-%20Cerquilho&utm_medium=affiliate&utm_campaign=Na%C3%A7%C3%A3o%20Verde%20-%20Franqueados" class="float-cta-btn" onclick="gtag_report_conversion()">
-    Experimentar Agora →
-  </a>
-</div>
 
 <script>
   // FAQ toggle
@@ -815,15 +722,7 @@
     });
   });
 
-  // Floating CTA
-  const floatCta = document.getElementById('floatCta');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 600) {
-      floatCta.classList.add('visible');
-    } else {
-      floatCta.classList.remove('visible');
-    }
-  });
+  // Google Ads conversion tracking
   function gtag_report_conversion() {
     gtag('event', 'conversion', {'send_to': 'AW-18022590380/DRVCCITY7qocEKzP65FD'});
     return false;
